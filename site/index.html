@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ceb">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tigmo Bisaya — Mga Bugtong sa Wikang Cebuano</title>
+  <meta name="description" content="Tigmo Bisaya — mga tradisyonal nga bugtong sa wikang Cebuano. Luhawi ang mga tigmo, ibahin ang kultura, ug ipakita sa kalibutan."/>
+  <link rel="icon" href="data:,"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Tigmo Bisaya — Mga Bugtong sa Wikang Cebuano"/>
+  <meta property="og:description" content="Tigmo Bisaya — mga tradisyonal nga bugtong sa wikang Cebuano. Luhawi, ibahin, ug ipakita."/>
+  <meta property="og:url" content="https://tigmo.uft1.com/"/>
+  <meta property="og:image" content="https://tigmo.uft1.com/img/cover-banner.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <style>
+    :root{
+      --ink:#0a0e14;
+      --ink-2:#0f141c;
+      --paper:#1a1f2b;
+      --gold:#d97706;
+      --gold-bright:#f59e0b;
+      --teal:#0d9488;
+      --teal-bright:#2dd4a7;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --amber-glow:rgba(217,119,6,0.15);
+      --teal-glow:rgba(13,148,136,0.15);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      background:
+        radial-gradient(circle at 20% 30%,var(--amber-glow),transparent 40%),
+        radial-gradient(circle at 80% 70%,var(--teal-glow),transparent 40%),
+        var(--ink);
+      color:var(--text);
+      min-height:100vh;
+      line-height:1.6;
+    }
+    main{max-width:960px;margin:0 auto;padding:0 20px}
+
+    /* ===== Banner ===== */
+    .banner{
+      position:relative;
+      height:260px;
+      margin:24px auto 32px;
+      border-radius:28px;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      box-shadow:0 40px 80px rgba(0,0,0,0.5);
+      background:
+        radial-gradient(ellipse at center,rgba(217,119,6,0.12),transparent 50%),
+        linear-gradient(160deg,var(--ink-2),var(--ink));
+      border:1px solid rgba(217,119,6,0.2);
+    }
+    .banner::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 3px,
+          rgba(217,119,6,0.04) 3px,
+          rgba(217,119,6,0.04) 6px
+        );
+      opacity:0.3;
+    }
+    .banner-inner{position:relative;z-index:2}
+    .banner h1{
+      font-size:clamp(2.4rem,6vw,3.4rem);
+      font-weight:700;
+      background:linear-gradient(135deg,var(--gold-bright),var(--teal-bright));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      letter-spacing:-0.02em;
+      margin-bottom:4px;
+    }
+    .banner .subtitle{
+      font-size:1.15rem;
+      color:var(--muted);
+      letter-spacing:0.04em;
+    }
+    .banner .tag{
+      display:inline-block;
+      margin-top:8px;
+      font-size:0.75rem;
+      text-transform:uppercase;
+      letter-spacing:0.25em;
+      color:var(--gold);
+      opacity:0.8;
+    }
+
+    /* ===== About ===== */
+    .section-title{
+      font-size:1.75rem;
+      font-weight:600;
+      color:var(--gold-bright);
+      margin-bottom:16px;
+      position:relative;
+      display:inline-block;
+    }
+    .section-title::after{
+      content:"";
+      position:absolute;
+      bottom:-6px;left:0;
+      width:48px;height:2px;
+      background:linear-gradient(90deg,var(--gold),var(--teal));
+    }
+    .about{
+      background:var(--paper);
+      border:1px solid rgba(217,119,6,0.15);
+      border-radius:20px;
+      padding:28px 32px;
+      margin-bottom:32px;
+      box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    }
+    .about p{
+      margin-bottom:12px;
+      color:var(--text);
+      font-size:1.05rem;
+    }
+    .about p:last-child{margin-bottom:0}
+    .about code{
+      background:rgba(217,119,6,0.12);
+      color:var(--gold-bright);
+      padding:2px 8px;
+      border-radius:4px;
+      font-size:0.9rem;
+    }
+
+    /* ===== Riddles ===== */
+    .riddles{margin-bottom:40px}
+    .riddle-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:16px;
+    }
+    .riddle-card{
+      background:var(--paper);
+      border:1px solid rgba(217,119,6,0.1);
+      border-left:3px solid var(--gold);
+      border-radius:16px;
+      padding:20px 24px;
+      box-shadow:0 15px 30px rgba(0,0,0,0.35);
+      transition:border-color 0.3s,box-shadow 0.3s;
+      cursor:pointer;
+    }
+    .riddle-card:hover{
+      border-left-color:var(--teal);
+      box-shadow:0 20px 40px rgba(13,148,136,0.12);
+    }
+    .riddle-card h3{
+      font-size:1.05rem;
+      font-weight:600;
+      color:var(--gold-bright);
+      margin-bottom:8px;
+    }
+    .riddle-card p.riddle{
+      color:var(--text);
+      font-size:0.95rem;
+      margin-bottom:0;
+    }
+    .riddle-card .answer{
+      margin-top:12px;
+      padding-top:10px;
+      border-top:1px dashed rgba(217,119,6,0.2);
+      font-weight:600;
+      color:var(--teal-bright);
+      font-size:0.95rem;
+      display:none;
+    }
+    .riddle-card.revealed .answer{display:block}
+    .riddle-card.revealed .answer::before{
+      content:"→ ";
+    }
+
+    /* ===== Facebook CTA ===== */
+    .fb-cta{
+      text-align:center;
+      padding:40px 24px;
+      background:linear-gradient(135,var(--gold),var(--teal));
+      border-radius:24px;
+      margin-bottom:32px;
+      box-shadow:0 30px 60px rgba(0,0,0,0.5);
+    }
+    .fb-cta h2{
+      color:#fff;
+      font-size:1.5rem;
+      font-weight:600;
+      margin-bottom:12px;
+  color:#fff;
+  text-shadow:0 1px 3px rgba(0,0,0,0.3);
+    }
+    .fb-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#1877f2;
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      padding:14px 28px;
+      border-radius:999px;
+      transition:transform 0.2s,opacity 0.2s;
+      border:none;
+      cursor:pointer;
+      font-size:1rem;
+    }
+    .fb-btn:hover{
+      transform:translateY(-2px);
+      opacity:0.95;
+    }
+    .fb-icon{
+      width:20px;height:20px;
+      fill:currentColor;
+    }
+
+    /* ===== Footer ===== */
+    footer{
+      text-align:center;
+      padding:28px 0;
+      color:var(--muted);
+      font-size:0.85rem;
+      border-top:1px solid rgba(217,119,6,0.1);
+    }
+    footer a{
+      color:var(--gold-bright);
+      text-decoration:none;
+    }
+    footer a:hover{text-decoration:underline}
+
+    @media(max-width:600px){
+      .banner{height:200px}
+      .about{padding:24px 20px}
+      .riddle-card{padding:18px 20px}
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- ===== Banner ===== -->
+    <section class="banner">
+      <div class="banner-inner">
+        <h1>Tigmo</h1>
+        <p class="subtitle">Mga Bugtong sa Wikang Cebuano</p>
+        <p class="tag">bisaya · riddle · kultura</p>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section class="about">
+      <h2 class="section-title">Apa kini ang Tigmo?</h2>
+      <p>Ang <strong>tigmo</strong> (poder ihapon, <code>tigmò</code>) amo ang binagátbag nga paláisipán sa wikang Cebuano — sama sa <em>bugtong</em> sa Tagalog. Isipon sa lokál nga kultura, mga tigmo nga gipangutanahan sa hugnúon, mga alágyer, ug mga butang sa kinabuhi.</p>
+      <p>Si Kelly (gikan sa <strong>Bisdák Words</strong>) nag-antip kini: <em>"Ang tigmo dili lang pangutana — iya kini sing tula, dala sa panan-aw"</em>. Ini nga panid amo ang tampilan sa mga tigmo nga gipapahayag sa atong <a href="https://www.facebook.com/profile.php?id=61595359612687" target="_blank" style="color:var(--gold-bright)">Facebook page</a>, ug ini nga website amo ang permanente nga tampilan sa mga katahoran sa Bisaya.</p>
+    </section>
+
+    <!-- ===== Featured Riddles ===== -->
+    <section class="riddles">
+      <h2 class="section-title">Tigmo sa adlawa</h2>
+      <p style="color:var(--muted);margin-bottom:24px;font-size:0.95rem">I-click ang karda aron makita sa tugot. Ang tanan nga mga tigmo didto sa <a href="https://www.facebook.com/profile.php?id=61595359612687" target="_blank" style="color:var(--gold-bright)">Tigmo Bisaya Facebook page</a>.</p>
+
+      <div class="riddle-grid">
+
+        <div class="riddle-card" onclick="this.classList.toggle('revealed')">
+          <h3>1. Kabayo ni Adan</h3>
+          <p class="riddle">Kabayo ni Adan, dili mokaon kon dili sakyan.</p>
+          <p class="answer">Tugot: <strong>Sunó</strong> (shadow)</p>
+        </div>
+
+        <div class="riddle-card" onclick="this.classList.toggle('revealed')">
+          <h3>2. Ang kaw sa imoha</h3>
+          <p class="riddle">Bulikata ang imoha, kay isod nako ang akoa.</p>
+          <p class="answer">Tugot: <strong>Kamá</strong> (bed)</p>
+        </div>
+
+        <div class="riddle-card" onclick="this.classList.toggle('revealed')">
+          <h3>3. Ginunting pula</h3>
+          <p class="riddle">Ug mamahay, masuko; ug masuko, modako.</p>
+          <p class="answer">Tugot: <strong>Punô</strong> (fist)</p>
+        </div>
+
+        <div class="riddle-card" onclick="this.classList.toggle('revealed')">
+          <h3>4. Bundok sa bapor</h3>
+          <p class="riddle">Bundok sa bapor, ug pababa, tig-ako.</p>
+          <p class="answer">Tugot: <strong>Basâ</strong> (cigarette ash)</p>
+        </div>
+
+        <div class="riddle-card" onclick="this.classList.toggle('revealed')">
+          <h3>5. Bantay sa bulaklak</h3>
+          <p class="riddle">Walang kahulugan, wala kong gamaw; bisan unsa pang bulaklak, dili ako makita.</p>
+          <p class="answer">Tugot: <strong>Tubig</strong> (water's surface reflection)</p>
+        </div>
+
+        <div class="riddle-card" onclick="this.classList.toggle('revealed')">
+          <h3>6. Tinapían</h3>
+                   <p class="riddle">May butones, dili maka-ako; may dungok, dili makakita.</p>
+          <p class="answer">Tugot: <strong>Bintána</strong> (window)</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Facebook CTA ===== -->
+    <section class="fb-cta">
+      <h2>Dili ka kaawate!</h2>
+      <p style="color:rgba(255,255,255,0.9);margin-bottom:20px;font-size:1.05rem">Sundan sa amo sa Facebook alang sa dagdag pa nga tigmo, kahulugan, ug apan-apan sa kultura.</p>
+      <a href="https://www.facebook.com/profile.php?id=61595359612687" target="_blank" class="fb-btn">
+        <svg class="fb-icon" viewBox="0 0 24 24">
+          <path d="M22.675 0h-21.35C.588 0 0 .584 0 1.308v21.384C0 23.416.588 24 1.325 24H11.5V14.7h-3.1V10.3h3.1V7.41c0-3.07 1.86-4.75 4.6-4.75 1.33 0 2.47.1 2.78.15v3.2h-1.9c-1.5 0-1.8.7-1.8 1.76v2.3h3.5l-.45 4.4h-3v5.92C23.416 24 24 23.416 24 22.692V1.308C24 .584 23.412 0 22.675 0"/>
+        </svg>
+        Tigmo Bisaya sa Facebook
+      </a>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <p>Tigmo Bisaya — mga tradisyonal nga bugtong sa <a href="https://en.wikipedia.org/wiki/Cebuano_language" target="_blank">Wikang Cebuano</a>. Gibuhat sa Pilakansya.</p>
+      <p style="margin-top:8px">Website: <a href="https://github.com/jovylle/tigmo">jovylle/tigmo</a> · Hosted on <a href="https://developers.cloudflare.com/pages">Cloudflare Pages</a></p>
+    </footer>
+  </main>
+
+  <script>
+    // Riddles reveal on click — progressive enhancement
+    document.querySelectorAll('.riddle-card').forEach(card => {
+      card.addEventListener('click', e => {
+        // Don't toggle if clicking the answer itself (allow text selection)
+        if (e.target.classList.contains('answer')) return;
+        card.classList.toggle('revealed');
+      });
+    });
+  </script>
+</body>
+</html>
